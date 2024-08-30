@@ -61,6 +61,73 @@ void execute_instruction(char *operation, char *reg, char *value, long *rax, lon
             // Adiciona um valor direto ao registrador
             *register_ptr += atol(value);
         }
+    } else if (strcmp(operation, "sub") == 0) {
+        // Operação ADD
+        if (value[0] == 'r') {
+            // Adiciona o valor de outro registrador
+            if (strcmp(value, "rax") == 0) *register_ptr -= *rax;
+            else if (strcmp(value, "rbx") == 0) *register_ptr -= *rbx;
+            else if (strcmp(value, "rcx") == 0) *register_ptr -= *rcx;
+            else if (strcmp(value, "rdx") == 0) *register_ptr -= *rdx;
+            else printf("no x86 register : %s\n", value);
+        } else {
+            // Adiciona um valor direto ao registrador
+            *register_ptr -= atol(value);
+        }
+    }else if (strcmp(operation, "mul") == 0) {
+        // Operação ADD
+        if (value[0] == 'r') {
+            // Adiciona o valor de outro registrador
+            if (strcmp(value, "rax") == 0) *register_ptr *= *rax;
+            else if (strcmp(value, "rbx") == 0) *register_ptr *= *rbx;
+            else if (strcmp(value, "rcx") == 0) *register_ptr *= *rcx;
+            else if (strcmp(value, "rdx") == 0) *register_ptr *= *rdx;
+            else printf("no x86 register : %s\n", value);
+        } else {
+            // Adiciona um valor direto ao registrador
+            *register_ptr *= atol(value);
+        }
+    }
+    else if (strcmp(operation, "div") == 0) {
+        // Operação ADD
+        if (value[0] == 'r') {
+            // Adiciona o valor de outro registrador
+            if (strcmp(value, "rax") == 0) *register_ptr /= *rax;
+            else if (strcmp(value, "rbx") == 0) *register_ptr /= *rbx;
+            else if (strcmp(value, "rcx") == 0) *register_ptr /= *rcx;
+            else if (strcmp(value, "rdx") == 0) *register_ptr /= *rdx;
+            else printf("no x86 register : %s\n", value);
+        } else {
+            // Adiciona um valor direto ao registrador
+            *register_ptr /= atol(value);
+        }
+    }
+    else if (strcmp(operation, "and") == 0) {
+        // Operação ADD
+        if (value[0] == 'r') {
+            // Adiciona o valor de outro registrador
+            if (strcmp(value, "rax") == 0) *register_ptr &= *rax;
+            else if (strcmp(value, "rbx") == 0) *register_ptr &= *rbx;
+            else if (strcmp(value, "rcx") == 0) *register_ptr &= *rcx;
+            else if (strcmp(value, "rdx") == 0) *register_ptr &= *rdx;
+            else printf("no x86 register : %s\n", value);
+        } else {
+            // Adiciona um valor direto ao registrador
+            *register_ptr &= atol(value);
+        }
+    }else if (strcmp(operation, "or") == 0) {
+        // Operação ADD
+        if (value[0] == 'r') {
+            // Adiciona o valor de outro registrador
+            if (strcmp(value, "rax") == 0) *register_ptr |= *rax;
+            else if (strcmp(value, "rbx") == 0) *register_ptr |= *rbx;
+            else if (strcmp(value, "rcx") == 0) *register_ptr |= *rcx;
+            else if (strcmp(value, "rdx") == 0) *register_ptr |= *rdx;
+            else printf("no x86 register : %s\n", value);
+        } else {
+            // Adiciona um valor direto ao registrador
+            *register_ptr |= atol(value);
+        }
     }
 }
 
@@ -84,6 +151,7 @@ int main() {
 
     // Lê cada linha do ficheiro e processa as instruções
     while (fgets(line, sizeof(line), file)) {
+        printf(line);
         operation = strtok(line, " ,\n");
         reg = strtok(NULL, " ,\n");
         value = strtok(NULL, " ,\n");
