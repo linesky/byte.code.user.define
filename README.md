@@ -1,3 +1,3 @@
-# Cpu
+# il.decompiler
 
-simulator
+decompiles .exe files
