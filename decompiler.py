@@ -19,6 +19,9 @@ for n in list1:
     pointss=True
     if not(n.find(".class")>-1 or n.find(".method")>-1 or n.find(" .entrypoint")>-1):
          pointss=(n.find(".")!=0)
+    ill=n.find("IL_")
+    if ill>-1:
+        n=n[:ill]+n[ill+9:]
     ill=n.find("//")
     if ill>-1:
         n=n[:ill]
