@@ -13,12 +13,16 @@ f1.close()
 
 list1=txts.split("\n")
 txts=""
+onon=False
 for n in list1:
+    
     ill=n.find("//")
     if ill>-1:
         n=n[:ill]
-    txts=txts+n+"\n"
-
+    if onon:
+        txts=txts+n+"\n"
+    if n.find(" "+files)>-1:
+        onon=True
 
 
 f1=open(pfiles+".il","w")
