@@ -14,6 +14,8 @@ f1.close()
 list1=txts.split("\n")
 txts=""
 onon=False
+counter=0
+counter2=0
 for n in list1:
     spacess=n.strip()!=""
     
@@ -45,8 +47,11 @@ for n in list1:
         if ill>-1:
             tt=tt[:ill]
         n=t+"int "+tt 
-
-        
+    
+    if n.find(" ldstr ")>-1:
+        t=" char *ldstr"+str(counter)+"[]="
+        n=n.replace(" ldstr ",t)
+        counter2=counter  
     if n.find(".entrypoint")>-1:
         t=""
         ill=n.find(".")
@@ -63,6 +68,7 @@ for n in list1:
         if ill>-1:
             tt=n[ill+2:]
         n=t+"call "+tt
+        n=n.replace("string","ldstr"+str(counter))
     if n.find(" ret")>-1:
         t=""
         ill=n.find("ret")
@@ -95,7 +101,7 @@ for n in list1:
         txts=txts+n+"\n"
     if n.find(" "+files)>-1:
         onon=True
-
+    counter+=1
 
 f1=open(pfiles+".il","w")
 f1.write(txts)
