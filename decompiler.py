@@ -63,7 +63,17 @@ for n in list1:
         if ill>-1:
             tt=n[ill+2:]
         n=t+"call "+tt
+    if n.find(" ret")>-1:
+        t=""
+        ill=n.find("ret")
+        if ill>-1:
+            t=n[:ill]
+
+        n=t+"return"
     pointss=True
+    if n.find(".maxstack")>-1:
+        pointss=False
+
     if n.find(".custom")>-1:
         pointss=False
     if n.find(" nop")>-1:
