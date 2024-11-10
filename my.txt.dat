@@ -1,0 +1,204 @@
+    #2C
+    if value==0x2C:
+        print("mov [r6],r7")
+    #2B
+    if value==0x2B:
+        print("mov [r4],r5")
+    #2A
+    if value==0x2A:
+        print("mov [r2],r3")
+    #29
+    if value==0x29:
+        print("mov [r0],r1")
+    #28
+    if value==0x28:
+        print("mov [r6],[r7]")
+    #27
+    if value==0x27:
+        print("mov [r4],[r5]")
+    #26
+    if value==0x26:
+        print("mov [r2],[r3]")
+    #25
+    if value==0x25:
+        print("mov [r0],[r1]")
+    #24
+    if value==0x24:
+        print("div")
+    #23
+    if value==0x23:
+        print("mul")
+    #22
+    if value==0x22:
+        print("sub")
+    #21
+    if value==0x21:
+        print("add")
+    #20
+    if value==0x20:
+                #20,00
+        if value==0x00:
+                        #20,00,00
+            if value==0x00:
+                print("pop r7")
+    #1F
+    if value==0x1F:
+                #1F,00
+        if value==0x00:
+                        #1F,00,00
+            if value==0x00:
+                print("pop r5")
+    #1E
+    if value==0x1E:
+                #1E,00
+        if value==0x00:
+                        #1E,00,00
+            if value==0x00:
+                print("pop r4")
+    #1D
+    if value==0x1D:
+                #1D,00
+        if value==0x00:
+                        #1D,00,00
+            if value==0x00:
+                print("pop r3")
+    #1C
+    if value==0x1C:
+                #1C,00
+        if value==0x00:
+                        #1C,00,00
+            if value==0x00:
+                print("pop r2")
+    #1B
+    if value==0x1B:
+                #1B,00
+        if value==0x00:
+                        #1B,00,00
+            if value==0x00:
+                print("pop r1")
+    #1A
+    if value==0x1A:
+                #1A,00
+        if value==0x00:
+                        #1A,00,00
+            if value==0x00:
+                print("pop r0")
+    #19
+    if value==0x19:
+                #19,00
+        if value==0x00:
+                        #19,00,00
+            if value==0x00:
+                print("pop r6")
+    #18
+    if value==0x18:
+                #18,00
+        if value==0x00:
+                        #18,00,00
+            if value==0x00:
+                print("push r7")
+    #16
+    if value==0x16:
+                #16,00
+        if value==0x00:
+                        #16,00,00
+            if value==0x00:
+                print("push r6")
+    #15
+    if value==0x15:
+                #15,00
+        if value==0x00:
+                        #15,00,00
+            if value==0x00:
+                print("push r5")
+    #14
+    if value==0x14:
+                #14,00
+        if value==0x00:
+                        #14,00,00
+            if value==0x00:
+                print("push r4")
+    #13
+    if value==0x13:
+                #13,00
+        if value==0x00:
+                        #13,00,00
+            if value==0x00:
+                print("push r3")
+    #12
+    if value==0x12:
+                #12,00
+        if value==0x00:
+                        #12,00,00
+            if value==0x00:
+                print("push r2")
+    #11
+    if value==0x11:
+                #11,00
+        if value==0x00:
+                        #11,00,00
+            if value==0x00:
+                print("push r1")
+    #10
+    if value==0x10:
+                #10,00
+        if value==0x00:
+                        #10,00,00
+            if value==0x00:
+                print("push r0")
+    #0f
+    if value==0x0f:
+        print("jb 0x0")
+    #0E
+    if value==0x0E:
+        print("jno 0x0")
+    #0D
+    if value==0x0D:
+        print("jo 0x0")
+    #0C
+    if value==0x0C:
+                #0C,00
+        if value==0x00:
+                        #0C,00,00
+            if value==0x00:
+                print("jnc 0X0")
+    #0B
+    if value==0x0B:
+        print("jc 0x0")
+    #0A
+    if value==0x0A:
+        print("jmp 0x0")
+    #09
+    if value==0x09:
+        print("jz 0x0")
+    #08
+    if value==0x08:
+        print("jnz 0x0")
+    #07
+    if value==0x07:
+        print("ret")
+    #06
+    if value==0x06:
+        print("call 0x0")
+    #05
+    if value==0x05:
+        print("popm 0x0")
+    #04
+    if value==0x04:
+        print("pushm 0x0")
+    #03
+    if value==0x03:
+        print("syscall")
+    #02
+    if value==0x02:
+        print("pop")
+    #01
+    if value==0x01:
+                #01,00
+        if value==0x00:
+                        #01,00,00
+            if value==0x00:
+                print("push 0x0")
+    #00
+    if value==0x00:
+        print("nop")
