@@ -1,5 +1,5 @@
 00|nop
-0100000000|push 0x0
+010000|push 0x0
 02|pop
 03|syscall
 040000|pushm 0x0
@@ -10,26 +10,26 @@
 090000|jz 0x0
 0A0000|jmp 0x0
 0B0000|jc 0x0
-0C0000|jnc 0X0
+0C0000|jnc 0x0
 0D0000|jo 0x0
 0E0000|jno 0x0
 0f0000|jb 0x0
-100000|push r0
-110000|push r1
-120000|push r2
-130000|push r3
-140000|push r4
-150000|push r5
-160000|push r6
-180000|push r7
-190000|pop r6
-1A0000|pop r0
-1B0000|pop r1
-1C0000|pop r2
-1D0000|pop r3
-1E0000|pop r4
-1F0000|pop r5
-200000|pop r7
+10|push r0
+11|push r1
+12|push r2
+13|push r3
+14|push r4
+15|push r5
+16|push r6
+18|push r7
+19|pop r6
+1A|pop r0
+1B|pop r1
+1C|pop r2
+1D|pop r3
+1E|pop r4
+1F|pop r5
+20|pop r7
 21|add
 22|sub
 23|mul
@@ -46,3 +46,8 @@
 26|mov r2,[r3]
 27|mov r4,[r5]
 28|mov r6,[r7]
+29|and
+3A|or
+3B|xor
+3C|not
+3d|neg
